@@ -9,7 +9,7 @@ class SearchPage extends Component {
 
     this.state = {
       search: '',
-      items: [],
+      items: [{name:'a'}],
     };
 
     this.handleSearchChange = this.handleSearchChange.bind(this);
@@ -35,13 +35,18 @@ class SearchPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="py-5">
         <SearchBar
           search={this.state.search}
           onSearchChange={this.handleSearchChange}
           onSubmit={this.handleSubmit}
         />
-        <RepoList repos={this.state.items} />
+        {this.state.items.length > 0 && (
+          <RepoList
+            repos={this.state.items}
+            totalCount={this.state.total_count}
+          />
+        )}
       </div>
     );
   }
