@@ -3,9 +3,14 @@ import PropTypes from 'prop-types';
 
 const RepoItem = ({ repo }) => {
   return (
-    <div>
-      {repo.name}
-    </div>
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href={repo.html_url}
+      className="list-group-item list-group-item-action"
+    >
+      {repo.full_name}
+    </a>
   );
 };
 
