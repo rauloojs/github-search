@@ -9,16 +9,33 @@ class SearchPage extends Component {
 
     this.state = {
       search: '',
-      items: [{name:'a'}],
+      items: [],
+      page: 1,
     };
 
     this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.handleLoadMore = this.handleLoadMore.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSearchChange(event) {
     this.setState({
       search: event.target.value,
+    });
+  }
+
+  async handleLoadMore() {
+    const page = this.state.page + 1;
+    const { search } = this.state;
+
+    const response = await searchRepositories(search, page);
+
+    this.setState({
+      items: [
+        ...this.state.items,
+        ...response.items,
+      ],
+      page,
     });
   }
 
@@ -30,6 +47,7 @@ class SearchPage extends Component {
 
     this.setState({
       ...response,
+      page: 1,
     });
   }
 
@@ -45,6 +63,7 @@ class SearchPage extends Component {
           <RepoList
             repos={this.state.items}
             totalCount={this.state.total_count}
+            onLoadMore={this.handleLoadMore}
           />
         )}
       </div>
