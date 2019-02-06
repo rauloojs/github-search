@@ -4,7 +4,7 @@ import SearchPage from '../SearchPage';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="bd-light container">
         <SearchPage />
       </div>
     );
