@@ -9,7 +9,8 @@ export function RepoItemDirective() {
     },
     controller: RepoItemController,
     controllerAs: 'vm',
-    bindToController: true
+    bindToController: true,
+    replace: true
   };
 
   return directive;
