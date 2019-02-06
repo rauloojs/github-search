@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { searchRepositories } from '../../../../api';
+import { searchRepositories } from '../../../../angular-version/api';
 import SearchBar from '../../components/SearchBar';
 import RepoList from '../../components/RepoList';
 
@@ -28,7 +28,6 @@ class SearchPage extends Component {
     const { search } = this.state;
     const response = await searchRepositories(search);
 
-    debugger
     this.setState({
       ...response,
     });
