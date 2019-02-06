@@ -5,7 +5,8 @@ export function RepoListDirective() {
     restrict: 'E',
     templateUrl: 'app/components/repoList/repoList.html',
     scope: {
-        repos: '='
+        repos: '=',
+        totalCount: '='
     },
     controller: RepoListController,
     controllerAs: 'vm',
