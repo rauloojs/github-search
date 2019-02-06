@@ -7,7 +7,7 @@ export class ApiService {
     this.$q = $q;
   }
 
-  searchRepositories(search) {
-    return this.$q.when(searchRepositories(search));
+  searchRepositories(...rest) {
+    return this.$q.when(searchRepositories(...rest));
   }
 }
