@@ -3,7 +3,7 @@ const baseURL = 'https://api.github.com';
 export const searchRepositories = (q = '') => {
   const options = {
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     }
   };
 
