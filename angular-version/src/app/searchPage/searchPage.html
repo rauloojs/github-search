@@ -1,2 +1,4 @@
-<search-bar data-search="searchPage.search" on-submit="searchPage.onSubmit($event)"></search-bar>
-<repo-list repos="searchPage.items"></repo-list>
+<div class="py-5">
+  <search-bar data-search="searchPage.search" on-submit="searchPage.onSubmit($event)"></search-bar>
+  <repo-list ng-show="searchPage.items.length > 0" repos="searchPage.items" total-count="searchPage.totalCount"></repo-list>
+</div>
