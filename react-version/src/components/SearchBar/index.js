@@ -9,6 +9,7 @@ const SearchBar = ({ search, onSearchChange, onSubmit}) => {
     >
       <div className="col-10">
         <input
+          required
           className="form-control"
           name="search"
           placeholder="Repo name"
