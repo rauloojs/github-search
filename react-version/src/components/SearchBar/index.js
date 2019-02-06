@@ -3,14 +3,22 @@ import PropTypes from 'prop-types';
 
 const SearchBar = ({ search, onSearchChange, onSubmit}) => {
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        name="search"
-        placeholder="Repo name"
-        value={search}
-        onChange={onSearchChange}
-      />
-      <button type="submit">Search</button>
+    <form
+      className="row mb-5"
+      onSubmit={onSubmit}
+    >
+      <div className="col-10">
+        <input
+          className="form-control"
+          name="search"
+          placeholder="Repo name"
+          value={search}
+          onChange={onSearchChange}
+        />
+      </div>
+      <div className="col-2">
+        <button className="btn btn-primary btn-block" type="submit">Search</button>
+      </div>
     </form>
   );
 };
