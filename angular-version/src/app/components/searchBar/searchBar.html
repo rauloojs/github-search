@@ -1,8 +1,13 @@
-<form ng-submit="vm.onSubmit($event)">
-  <input
-    name="search"
-    placeholder="Repo name"
-    ng-model="vm.search"
-  />
-  <button type="submit">Search</button>
+<form ng-submit="vm.onSubmit($event)" class="row mb-5">
+  <div class="col-10">
+    <input
+      class="form-control"
+      name="search"
+      placeholder="Repo name"
+      ng-model="vm.search"
+    />
+  </div>
+  <div class="col-2">
+    <button class="btn btn-primary btn-block"type="submit">Search</button>
+  </div>
 </form>
