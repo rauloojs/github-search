@@ -7,7 +7,7 @@ import { SearchBarDirective } from '../app/components/searchBar/searchBar.direct
 import { RepoListDirective } from '../app/components/repoList/repoList.directive';
 import { RepoItemDirective } from '../app/components/repoItem/repoItem.directive';
 
-angular.module('angularVersion', ['ngSanitize', 'ngMessages', 'ngAria', 'ngRoute', 'toastr'])
+angular.module('angularVersion', ['ngSanitize', 'ngMessages', 'ngAria', 'ngRoute'])
   .config(config)
   .config(routerConfig)
   .run(runBlock)
