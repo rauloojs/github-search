@@ -1,6 +1,7 @@
 <div>
   <h4>{{vm.totalCount}} results</h4>
-  <ul class="list-group">
+  <ul class="list-group mb-4">
     <repo-item ng-repeat="repo in vm.repos" repo="repo"></repo-item>
   </ul>
+  <button ng-click="vm.onLoadMore()" type="button" class="btn btn-outline-secondary float-right">Load more</button>
 </div>
